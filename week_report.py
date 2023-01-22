@@ -131,8 +131,6 @@ st.sidebar.write('')
 #休暇取得実績
 st.write('＜休暇取得実績＞')
 premiumday = st.sidebar.checkbox('プレミアムデー取得済み')
-holiday_take = st.sidebar.checkbox('有給休暇済み')
-
 if premiumday:
     premiumday_take = st.sidebar.date_input(
     "プレミアムデー取得日を選択",
@@ -143,6 +141,7 @@ if premiumday:
 else:
     st.write('■なし')
 
+holiday_take = st.sidebar.checkbox('有給休暇済み')
 if holiday_take:
     holiday_take_take = st.sidebar.date_input(
     "有給休暇取得日を選択",
@@ -158,8 +157,6 @@ st.write('')
 #休暇取得予定
 st.write('＜休暇取得予定＞')
 premiumday_schedule = st.sidebar.checkbox('プレミアムデー取得予定')
-holiday_schedule = st.sidebar.checkbox('有給休暇予定')
-
 if premiumday_schedule:
     premiumday_schedule_take = st.sidebar.date_input(
     "プレミアムデー取得予定日を選択",
@@ -170,6 +167,7 @@ if premiumday_schedule:
 else:
     st.write('■なし')
 
+holiday_schedule = st.sidebar.checkbox('有給休暇予定')
 if holiday_schedule:
     holiday_schedule_take = st.sidebar.date_input(
     "有給休暇取得予定日を選択",
