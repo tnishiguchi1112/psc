@@ -1,11 +1,18 @@
 import streamlit as st
 import datetime
+import time
 
 # git init
 # git remoto add origin https://github.com/tnishiguchi1112/psc.git
 # git add .
 # git commit -m '1st commit'
 # git push origin main
+
+my_bar = st.progress(0)
+
+for percent_complete in range(100):
+    time.sleep(0.015)
+    my_bar.progress(percent_complete + 1)
 
 st.title('週報作成（左上部の「>」ボタンをクリックしスライダーを展開できます。パラメータ入力後、下記をコピーしてください）')
 
