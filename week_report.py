@@ -1,11 +1,11 @@
 import streamlit as st
 import datetime
 
-#git init
-#git remoto add origin https://github.com/tnishiguchi1112/psc.git
-#git add .
-#git commit -m '1st commit'
-#git push origin main
+# git init
+# git remoto add origin https://github.com/tnishiguchi1112/psc.git
+# git add .
+# git commit -m '1st commit'
+# git push origin main
 
 st.title('週報作成')
 
