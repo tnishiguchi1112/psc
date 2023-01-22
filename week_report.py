@@ -7,7 +7,7 @@ import datetime
 # git commit -m '1st commit'
 # git push origin main
 
-st.title('週報作成（左のスライダーを展開し、パラメータ入力後、下記をコピーしてください）')
+st.title('週報作成（左上部の「>」ボタンをクリックしスライダーを展開できます。パラメータ入力後、下記をコピーしてください）')
 
 
 #週報期間（開始）
