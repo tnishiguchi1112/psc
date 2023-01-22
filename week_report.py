@@ -1,6 +1,12 @@
 import streamlit as st
 import datetime
 
+#git init
+#git remoto add origin https://github.com/tnishiguchi1112/psc.git
+#git add .
+#git commit -m '1st commit'
+#git push origin main
+
 st.title('週報作成')
 
 d_start = st.sidebar.date_input(
@@ -17,7 +23,7 @@ st.write('')
 st.write('件名：西日本BPO1課_西口崇登_PJ週報_', d_end_str_slash)
 st.write('')
 
-st.write('本文:（バラメータ入力後、下記をコピーしてください）')
+st.write('本文:（左のスライダーを展開し、パラメータ入力後、下記をコピーしてください）')
 st.write('各位')
 st.write('')
 
