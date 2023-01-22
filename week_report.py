@@ -169,12 +169,12 @@ else:
     st.write('■なし')
 
 if holiday_schedule:
-    holiday_schedule = st.sidebar.date_input(
-    "有給休暇取得日を選択",
+    holiday_schedule_take = st.sidebar.date_input(
+    "有給休暇取得予定日を選択",
     datetime.date.today())
-    holiday_schedule_str = str(holiday_schedule)
-    holiday_schedule_str_slash =holiday_schedule_str.replace('-', '/') 
-    st.write('■', holiday_schedule_str_slash[5:10], '有給休暇')
+    holiday_schedule_take_str = str(holiday_schedule_take)
+    holiday_schedule_take_str_slash =holiday_schedule_take_str.replace('-', '/') 
+    st.write('■', holiday_schedule_take_str_slash[5:10], '有給休暇')
 else:
     st.write('■なし')
 st.write('')
