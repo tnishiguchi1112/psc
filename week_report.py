@@ -64,16 +64,110 @@ holiday = st.sidebar.slider('休暇取得日数', 0, 31, 0)
 holiday_str = str(holiday)
 worktime = workday * 8
 worktime_str = str(worktime)
-overtime = st.sidebar.time_input('平日深夜時間', datetime.time(0, 00))
-overtime_str = str(overtime)
+overnighttime = st.sidebar.time_input('平日深夜時間', datetime.time(0, 00))
+overnighttime_str = str(overnighttime)
 st.write('＜', d_end_str_slash[5:7], '月稼働実績＞')
-st.write('■稼働日：', workday_str, '日', '休暇取得：', holiday_str, '日', '当月想定稼働時間：', worktime_str, '時間(内平日深夜', overtime_str[0:5], '時間)')
+st.write('■稼働日：', workday_str, '日', '休暇取得：', holiday_str, '日', '当月想定稼働時間：', worktime_str, '時間(内平日深夜', overnighttime_str[0:5], '時間)')
 st.write('')
 
+st.write('＜', d_end_str_slash[5:7], '月超過報告＞')
+overtime = st.sidebar.time_input('常駐先残業時間', datetime.time(0, 00))
+overtime_str = str(overtime)
+st.write('■', overtime_str[0:5], '/常駐先業務のため')
+overtime_mtg = st.sidebar.time_input('BPO事業部MTGによる残業時間', datetime.time(0, 00))
+overtime_mtg_str = str(overtime_mtg)
+st.write('■', overtime_mtg_str[0:5], '/BPO事業部ミーティングのため')
+st.write('')
+
+st.write('＜休暇取得実績＞')
+premiumday = st.sidebar.checkbox('プレミアムデー取得済み')
+holiday_take = st.sidebar.checkbox('有給休暇済み')
+
+if premiumday:
+    premiumday_take = st.sidebar.date_input(
+    "プレミアムデー取得日を選択",
+    datetime.date.today())
+    premiumday_take_str = str(premiumday_take)
+    premiumday_take_str_slash =premiumday_take_str.replace('-', '/') 
+    st.write('■', premiumday_take_str_slash[5:10], 'プレミアムデー')
+else:
+    st.write('■なし')
+
+if holiday_take:
+    holiday_take_take = st.sidebar.date_input(
+    "有給休暇取得日を選択",
+    datetime.date.today())
+    holiday_take_take_str = str(holiday_take_take)
+    holiday_take_take_str_slash =holiday_take_take_str.replace('-', '/') 
+    st.write('■', holiday_take_take_str_slash[5:10], '有給休暇')
+else:
+    st.write('■なし')
+st.write('')
+
+
+
+
+st.write('＜休暇取得予定＞')
+premiumday_schedule = st.sidebar.checkbox('プレミアムデー取得予定')
+holiday_schedule = st.sidebar.checkbox('有給休暇予定')
+
+if premiumday_schedule:
+    premiumday_schedule_take = st.sidebar.date_input(
+    "プレミアムデー取得予定日を選択",
+    datetime.date.today())
+    premiumday_schedule_take_str = str(premiumday_schedule_take)
+    premiumday_schedule_take_str_slash =premiumday_schedule_take_str.replace('-', '/') 
+    st.write('■', premiumday_schedule_take_str_slash[5:10], 'プレミアムデー')
+else:
+    st.write('■なし')
+
+if holiday_schedule:
+    holiday_schedule = st.sidebar.date_input(
+    "有給休暇取得日を選択",
+    datetime.date.today())
+    holiday_schedule_str = str(holiday_schedule)
+    holiday_schedule_str_slash =holiday_schedule_str.replace('-', '/') 
+    st.write('■', holiday_schedule_str_slash[5:10], '有給休暇')
+else:
+    st.write('■なし')
+
+
+st.write('')
+
+
+
+
+
+#■1月18日プレミアムデー
+
+
+
+
+
+st.write('＜休日出勤実績＞')
+st.write('')
+st.write('＜休日出勤予定＞')
 st.write('')
 st.write('')
 st.write('')
 st.write('')
 st.write('')
+st.write('＜有給休暇取得状況＞')
+st.write('')
+
+st.write('＜資格取得報告＞')
+st.write('■5日中4日取得済（残6日）')
+st.write('')
+
+st.write('＜トピックス、連絡事項、その他＞')
+st.write('■Python 3 エンジニア認定基礎試験/2月予定/50%')
+st.write('基本情報技術者試験/4月予定/20%')
+
+st.write('以上、よろしくお願いいたします。')
 st.write('')
 st.write('')
+st.write('')
+st.write('')
+st.write('')
+
+st.write('改善点：業務内容を複数選択できるようにする、稼働日数を平日から計算するようにする、前回入力値を維持するにわ？、先頭に空白をいれる、超過報告を追加できるようにする（その他の項目についても例外を入力できるようにする）、休暇取得や休日出勤を複数選択でき、1つも存在しないときは「■なし」の出力を1つにする')
