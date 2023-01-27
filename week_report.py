@@ -236,8 +236,14 @@ st.sidebar.write('-----------------------------------------')
 st.sidebar.write('')
 
 
+syonari = '＜'
+month = d_start_str_slash[5:7]
+
+
 #稼働実績(後で修正)
-st.sidebar.write('＜', d_start_str_slash[5:7], '月稼働実績＞')
+kadou = ('月稼働実績＞')
+kadou_str = syonari + month + kadou
+st.sidebar.subheader(kadou_str)
 workday = st.sidebar.slider('稼働日数', 0, 31, 20)
 workday_str = str(workday)
 st.sidebar.write('')
@@ -258,7 +264,9 @@ st.sidebar.write('')
 
 #超過報告
 st.write('＜', d_start_str_slash[5:7], '月超過報告＞')
-st.sidebar.write('＜', d_start_str_slash[5:7], '月超過報告＞')
+overworkreport = ('月超過報告＞')
+overworkreport_str = syonari + month + overworkreport
+st.sidebar.subheader(overworkreport_str)
 overtime = st.sidebar.time_input('常駐先残業時間', datetime.time(0, 00))
 overtime_str = str(overtime)
 st.sidebar.write('')
@@ -414,7 +422,9 @@ all_paid_str = str(all_paid)
 st.sidebar.write('')
 paid = st.sidebar.slider('有給取得数', 0, 40, 0)
 paid_str = str(paid)
-st.write('■5日中', paid_str, '日取得済（残', all_paid_str, '日）')
+all_paid_nokori = all_paid - paid
+all_paid_nokori_str = str(all_paid_nokori)
+st.write('■5日中', paid_str, '日取得済（残', all_paid_nokori_str, '日）')
 st.write('')
 st.sidebar.write('')
 st.sidebar.write('-----------------------------------------')
@@ -458,7 +468,7 @@ st.sidebar.write('')
 
 #連絡事項
 st.write('＜トピックス、連絡事項、その他＞')
-contact = st.sidebar.checkbox('トピックス、連絡事項、その他記入')
+contact = st.sidebar.checkbox('＜トピックス、連絡事項、その他＞')
 if contact:
     message = st.sidebar.text_input('内容記入')
     st.write(message)
