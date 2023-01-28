@@ -11,7 +11,7 @@ import time
 
 st.title('週報作成ツール')
 st.write('左上部の「>」ボタンをクリックしスライダーを展開できます。')
-st.write('パラメータ入力後、下記をコピーしてください。')
+st.write('パラメータ入力後、下記をコピーボタンをしてください。')
 
 
 #作成者選択
@@ -51,15 +51,37 @@ d_end_str_slash = d_end_str.replace('-', '/')
 st.write('')
 
 
+st.write('-----------------------------------------')
+st.write('')
+
+
 #件名
-mail_title = ('件名：西日本BPO1課_')
+mail = ('件名：')
+mail_title = ('西日本BPO1課_')
 pj = ('_PJ週報_')
 if human_text:
-    mail_title_sun_text = mail_title + human_text_message_str + pj + d_end_str_slash
+    mail_title_sun_text = mail + mail_title + human_text_message_str + pj + d_end_str_slash
     st.write(mail_title_sun_text)
 else:
-    mail_title_sun = mail_title + human_str + pj + d_end_str_slash
+    mail_title_sun = mail + mail_title + human_str + pj + d_end_str_slash
     st.write(mail_title_sun)
+import pyperclip
+if human_text:
+    if st.button('件名コピー'):
+        mail_title_sun_text2 = mail_title + human_text_message_str + pj + d_end_str_slash
+        pyperclip.copy(mail_title_sun_text2) # クリップボードに文字列を格納
+    else:
+        pass
+else:
+    if st.button('件名コピー'):
+        mail_title_sun2 = mail_title + human_str + pj + d_end_str_slash
+        pyperclip.copy(mail_title_sun2) # クリップボードに文字列を格納
+    else:
+        pass
+
+    
+st.write('')
+st.write('-----------------------------------------')
 st.write('')
 
 
@@ -482,8 +504,29 @@ st.sidebar.write('')
 
 st.write('以上、よろしくお願いいたします。')
 st.write('')
-st.write('')
-st.write('')
-st.write('')
+st.write('-----------------------------------------')
 st.write('')
 st.write('ver1.2')
+st.write('')
+st.subheader('改善点')
+st.write('対象者以外も選べるように記述欄を挿入')
+st.write('選択を3つ、記述も3つまで選べるように改善')
+st.write('休暇や休日出勤が1つもない場合「■なし」を1つだけ出力するように改善')
+st.write('作成した文をコピーできるコピーボタンを挿入')
+st.write('')
+st.subheader('要改善点')
+st.write('平日から休暇取得日数を引いて自動で稼働日数を算出')
+st.write('スマホで使用する場合、サイドバーのカレンダー使用時、毎回閉じてしまう')
+st.write('本文のコピーは分岐や量が多すぎて、今の技術力では困難')
+
+# if human_text:
+#     human_text_message_str = str(human_text_message)
+# else:
+#     human_str = str(human)
+
+# fasdf = human_text_message_str
+
+# if st.button('本文コピー'):
+#     pyperclip.copy(fasdf)
+# else:
+#     pass
