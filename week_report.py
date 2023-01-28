@@ -518,7 +518,7 @@ st.subheader('要改善点')
 st.write('平日から休暇取得日数を引いて自動で稼働日数を算出')
 st.write('スマホで使用する場合、サイドバーのカレンダー使用時、毎回閉じてしまう')
 st.write('本文のコピーは分岐や量が多すぎて、今の技術力では困難。件名のみのコピーはパソコンでのみ実現可能')
-
+st.write('Outlookのメールに直接コピペすると改行が消えてしまう')
 # if human_text:
 #     human_text_message_str = str(human_text_message)
 # else:
