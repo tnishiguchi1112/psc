@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 import time
+import pyperclip
 
 # git init
 # git remoto add origin https://github.com/tnishiguchi1112/psc.git
@@ -65,7 +66,6 @@ if human_text:
 else:
     mail_title_sun = mail + mail_title + human_str + pj + d_end_str_slash
     st.write(mail_title_sun)
-import pyperclip
 if human_text:
     if st.button('件名コピー'):
         mail_title_sun_text2 = mail_title + human_text_message_str + pj + d_end_str_slash
