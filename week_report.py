@@ -458,25 +458,26 @@ st.write('＜資格取得報告＞')
 st.sidebar.subheader('＜資格取得報告＞')
 syape = ('/')
 pasent = ('%')
+torikumi = ('取り組み状況')
 shikaku = st.sidebar.checkbox('その他の資格項目を記入')
 if shikaku:
     shikaku_text = st.sidebar.text_input('資格項目記入')
     shikaku_text_goal = st.sidebar.selectbox(
             '取得予定月を選択',
-            ('1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月' '11月', '12月'))
+            ('1月予定', '2月予定', '3月予定', '4月予定', '5月予定', '6月予定', '7月予定', '8月予定', '9月予定', '10月予定', '11月予定', '12月予定'))
     shikaku_slider = st.sidebar.slider(shikaku_text, 0, 100, 50)
     shikaku_slider_str = str(shikaku_slider)
-    st.write(shikaku_text + syape + shikaku_text_goal + syape + shikaku_slider_str + pasent)
+    st.write(shikaku_text + syape + shikaku_text_goal + syape + torikumi + shikaku_slider_str + pasent)
 else:
     python3 = st.sidebar.slider('Python 3 エンジニア認定基礎試験進捗', 0, 100, 50)
     python3_str = str(python3)
     st.sidebar.write('')
-    st.write('■Python 3 エンジニア認定基礎試験/2月予定/', python3_str, '%')
+    st.write('■Python 3 エンジニア認定基礎試験/2月予定/', torikumi, python3_str, '%')
 
     basic_enginer = st.sidebar.slider('基本情報技術者試験進捗', 0, 100, 20)
     basic_enginer_str = str(basic_enginer)
     st.sidebar.write('')
-    st.write('■基本情報技術者試験/4月予定/', basic_enginer_str, '%')
+    st.write('■基本情報技術者試験/4月予定/', torikumi, basic_enginer_str, '%')
 
 
 
