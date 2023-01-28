@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 import time
-import pyperclip
+# import pyperclip
 
 # git init
 # git remoto add origin https://github.com/tnishiguchi1112/psc.git
@@ -66,18 +66,18 @@ if human_text:
 else:
     mail_title_sun = mail + mail_title + human_str + pj + d_end_str_slash
     st.write(mail_title_sun)
-if human_text:
-    if st.button('件名コピー'):
-        mail_title_sun_text2 = mail_title + human_text_message_str + pj + d_end_str_slash
-        pyperclip.copy(mail_title_sun_text2) # クリップボードに文字列を格納
-    else:
-        pass
-else:
-    if st.button('件名コピー'):
-        mail_title_sun2 = mail_title + human_str + pj + d_end_str_slash
-        pyperclip.copy(mail_title_sun2) # クリップボードに文字列を格納
-    else:
-        pass
+# if human_text:
+#     if st.button('件名コピー'):
+#         mail_title_sun_text2 = mail_title + human_text_message_str + pj + d_end_str_slash
+#         pyperclip.copy(mail_title_sun_text2) # クリップボードに文字列を格納
+#     else:
+#         pass
+# else:
+#     if st.button('件名コピー'):
+#         mail_title_sun2 = mail_title + human_str + pj + d_end_str_slash
+#         pyperclip.copy(mail_title_sun2) # クリップボードに文字列を格納
+#     else:
+#         pass
 
 
 st.write('')
@@ -513,12 +513,11 @@ st.subheader('改善点')
 st.write('対象者以外も選べるように記述欄を挿入')
 st.write('選択を3つ、記述も3つまで選べるように改善')
 st.write('休暇や休日出勤が1つもない場合「■なし」を1つだけ出力するように改善')
-st.write('作成した文をコピーできるコピーボタンを挿入')
 st.write('')
 st.subheader('要改善点')
 st.write('平日から休暇取得日数を引いて自動で稼働日数を算出')
 st.write('スマホで使用する場合、サイドバーのカレンダー使用時、毎回閉じてしまう')
-st.write('本文のコピーは分岐や量が多すぎて、今の技術力では困難')
+st.write('本文のコピーは分岐や量が多すぎて、今の技術力では困難。件名のみのコピーはパソコンでのみ実現可能')
 
 # if human_text:
 #     human_text_message_str = str(human_text_message)
